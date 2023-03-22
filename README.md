@@ -1,8 +1,8 @@
 # Groupe de Mickael/Tarik/Alaa/Hugo/Ali
 # Semaine 1 : 
 **Sujet** : PollutionLumineuse 
-on a cherché sur les chauves souris  
-on a appris les commandes  
+On a cherché sur l'impact de la pollution lumineuse sur les chauves souris.  
+On a certaines commandes pour github appris les commandes  
 # Semaine 2 : 
 **Sujet** : Satellite  
 On a décidé de changer de sujet car on ne trouvait pas de modélisation dynamique pour la pollution lumineuse. On a donc changé de sujet pour faire sur le thème des satellites.  
@@ -15,6 +15,7 @@ Nous avons étudier les suites qui vont permettre la modélisation, ces suites o
 Cette étude nous a permit de comnprendre certains paramètre de ces suites :  
   Phi = Le taux de débris entrant dans l'atmosphère.  
   Gamma = Le nombre de débris aux lancements.  
+  delta = le taux de satellite qui s'arrête de fonctionner et qui deviennent donc incontrolable ( débris ).  
   D-kessler = 1/w = effet Kessler ( ce que nous cherchons )  
   Pour trouver ses paramètre nous avons mis chaque paramètre à zero et puis nous avons fait varier un paramètre à la fois pour voir son impacte sur la suite.  
 ## model 
