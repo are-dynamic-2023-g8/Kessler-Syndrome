@@ -18,7 +18,7 @@ Cette étude nous a permit de comnprendre certains paramètre de ces suites :
   delta = le taux de satellite qui s'arrête de fonctionner et qui deviennent donc incontrolable ( débris ).  
   D-kessler = 1/w = effet Kessler ( ce que nous cherchons )  
   Pour trouver ses paramètre nous avons mis chaque paramètre à zero et puis nous avons fait varier un paramètre à la fois pour voir son impacte sur la suite.  
-  Nous avons également commencé à reflechir à un modèle sur jupyter-notebook.
+  Nous avons également commencé à reflechir à un modèle sur jupyter-notebook.  
 L'objectif pour la semaine prochaine est de faire un premier modèle sur jupyter-notebook.  
 ## model 
 ## analyse
