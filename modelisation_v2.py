@@ -26,7 +26,7 @@ done = False
 satellites = []
 for i in range(NUM_SATELLITES):
     # Générer une distance aléatoire entre le rayon de la Terre et le double du rayon
-    distance = random.uniform(RADIUS*1.1, RADIUS*2)
+    distance = random.uniform(RADIUS*1.1, RADIUS*1.9)
     # Générer un angle aléatoire en radians
     angle = random.uniform(0, 2*math.pi)
     # Initialiser la couleur à blanc
@@ -60,11 +60,13 @@ while not done:
             dx = CENTER[0] + distance*math.cos(angle) - CENTER[0] - distance2*math.cos(angle2)
             dy = CENTER[1] + distance*math.sin(angle) - CENTER[1] - distance2*math.sin(angle2)
             if math.sqrt(dx*dx + dy*dy) < 1:
-                if couleur2!=(255, 0, 0) and couleur!=(255, 0, 0):
+                # Les satellites sont entrés en collision, changer leur couleur en rouge 
+                # ->sur une proba(puisque la modélisation doit representer un phénomène 3D)
+                probabilite_change = random.randint(0,50)
+                if probabilite_change == 49:
+                    satellites[i] = (distance, angle, (255, 0, 0))
+                    satellites[j] = (distance2, angle2, (255, 0, 0))
                     collision_count += 1
-                # Les satellites sont entrés en collision, changer leur couleur en rouge
-                satellites[i] = (distance, angle, (255, 0, 0))
-                satellites[j] = (distance2, angle2, (255, 0, 0))
 
 
     font = pygame.font.Font(None, 30)
@@ -79,13 +81,13 @@ while not done:
     for i in range(int(NUM_SATELLITES/2)):
         distance, angle, couleur = satellites[i]
         # Ajouter un petit angle à l'angle actuel pour faire tourner les satellites
-        angle += 0.00002*i
+        angle += 0.0002*i
         satellites[i] = (distance, angle,couleur)
     
     for i in range(int(NUM_SATELLITES/2),NUM_SATELLITES):
         distance, angle, couleur = satellites[i]
         # Ajouter un petit angle à l'angle actuel pour faire tourner les satellites
-        angle -= 0.00002*i
+        angle -= 0.0002*i
         satellites[i] = (distance, angle,couleur)
     
     # Limiter la fréquence d'images
@@ -93,4 +95,6 @@ while not done:
 
 # Quitter Pygame
 pygame.quit()
+
+
 
