@@ -20,5 +20,10 @@ Cette étude nous a permit de comnprendre certains paramètre de ces suites :
   Pour trouver ses paramètre nous avons mis chaque paramètre à zero et puis nous avons fait varier un paramètre à la fois pour voir son impacte sur la suite.  
   Nous avons également commencé à reflechir à un modèle sur jupyter-notebook.  
 L'objectif pour la semaine prochaine est de faire un premier modèle sur jupyter-notebook.  
+# Semaine 4 :
+?
+# Semaine 5 :
+Nous avons décidé de diviser le groupe en 2 pour travailler sur la bibliographie et le code du programme de modélisation. Nous avons ainsi pu terminé la bibliographie et nous avons pu avoir une premiere modélisation visuel.
+# Semaine 6 :
 ## model 
 ## analyse
