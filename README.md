@@ -1,29 +1,42 @@
 # Groupe de Mickael/Tarik/Alaa/Hugo/Ali
-# Semaine 1 : 
-**Sujet** : PollutionLumineuse 
-On a cherché sur l'impact de la pollution lumineuse sur les chauves souris.  
-On a appris certaines commandes pour github les commandes  
-# Semaine 2 : 
-**Sujet** : Satellite  
-On a décidé de changer de sujet car on ne trouvait pas de modélisation dynamique pour la pollution lumineuse. On a donc changé de sujet pour faire sur le thème des satellites.  
-On a choisit de faire des recherche sur le Kessler Syndrome. Ainsi nous avons trouvé plusieurs articles qui utilisaient des formules et modèles.  
-**Source** : https://doi.org/10.1016/j.econlet.2018.02.025  
-             https://doi.org/10.1016/j.spacepol.2018.03.003  
-             https://doi.org/10.1063/1.4739900  
-# Semaine 3 :
-Nous avons étudier les suites qui vont permettre la modélisation, ces suites ont été trouvé sur https://doi.org/10.1016/j.econlet.2018.02.025 .  
-Cette étude nous a permit de comnprendre certains paramètre de ces suites :  
-  Phi = Le taux de débris entrant dans l'atmosphère.  
-  Gamma = Le nombre de débris aux lancements.  
-  delta = le taux de satellite qui s'arrête de fonctionner et qui deviennent donc incontrolable ( débris ).  
-  D-kessler = 1/w = effet Kessler ( ce que nous cherchons )  
-  Pour trouver ses paramètre nous avons mis chaque paramètre à zero et puis nous avons fait varier un paramètre à la fois pour voir son impacte sur la suite.  
-  Nous avons également commencé à reflechir à un modèle sur jupyter-notebook.  
-L'objectif pour la semaine prochaine est de faire un premier modèle sur jupyter-notebook.  
-# Semaine 4 :
-?
-# Semaine 5 :
-Nous avons décidé de diviser le groupe en 2 pour travailler sur la bibliographie et le code du programme de modélisation. Nous avons ainsi pu terminé la bibliographie et nous avons pu avoir une premiere modélisation visuel.
-# Semaine 6 :
-## model 
-## analyse
+
+## Semaine 1 :
+### Sujet : Pollution Lumineuse 
+- Effectué des recherches sur l'impact de la pollution lumineuse sur les chauves-souris.  
+- Appris les commandes de base de GitHub.
+
+## Semaine 2 : 
+### Sujet : Satellites  
+- Décidé de changer de sujet car nous n'avons pas trouvé de modélisation dynamique pour la pollution lumineuse.
+- Choisi de travailler sur le thème des satellites et recherché des informations sur le Kessler Syndrome. 
+- Trouvé plusieurs articles qui utilisent des formules et modèles.  
+- Sources : 
+    - https://doi.org/10.1016/j.econlet.2018.02.025  
+    - https://doi.org/10.1016/j.spacepol.2018.03.003  
+    - https://doi.org/10.1063/1.4739900  
+
+## Semaine 3 :
+### Sujet : Modélisation des débris spatiaux
+- Étudié les suites permettant la modélisation, trouvées sur https://doi.org/10.1016/j.econlet.2018.02.025 .
+- Compris les paramètres des suites :
+    - Phi = Taux de débris entrant dans l'atmosphère
+    - Gamma = Nombre de débris aux lancements
+    - Delta = Taux de satellites qui cessent de fonctionner et deviennent des débris
+    - D-kessler = 1/w = Effet Kessler
+- Déterminé l'impact de chaque paramètre sur la suite en le faisant varier un à la fois.
+- Commencé à travailler sur un modèle Jupyter Notebook pour la modélisation.
+- Objectif pour la semaine prochaine : créer un premier modèle sur Jupyter Notebook.
+
+## Semaine 4 :
+### Sujet : à compléter
+
+## Semaine 5 :
+### Sujet : Bibliographie et modélisation
+- Divisé le groupe en 2 pour travailler sur la bibliographie et le code du programme de modélisation.
+- Terminé la bibliographie.
+- Réalisé une première modélisation visuelle.
+
+## Semaine 6 :
+### Sujet : Modèle et analyse
+- Travail sur le modèle.
+- Analyse des résultats obtenus. 
