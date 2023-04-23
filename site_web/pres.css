@@ -186,6 +186,10 @@ p:hover {
   width:default;
   opacity:0.7;
   margin-bottom: 80px;
+  transition: transform 0.3s ease;
+}
+#img_metrique:hover {
+  transform: scale(1.2);
 }
 
 code {
