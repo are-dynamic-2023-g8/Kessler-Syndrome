@@ -1,16 +1,16 @@
 @font-face {
   font-family: 'Space-Quest';
-  src: url('C:\\Users\\micka\\OneDrive\\Bureau\\L1\\ARE\\Site web\\polices d\'écriture\\missiondangerspaced.ttf');
+  src: url("https://raw.githubusercontent.com/are-dynamic-2023-g8/Kessler-Syndrome/main/polices_écritures/missiondangerspaced.ttf");
 }
 
 @font-face {
   font-family: 'Space-Quest-Title';
-  src: url('C:\\Users\\micka\\OneDrive\\Bureau\\L1\\ARE\\Site web\\polices d\'écriture\\missiondangertitle.ttf');
+  src: url('https://raw.githubusercontent.com/are-dynamic-2023-g8/Kessler-Syndrome/main/polices_écritures/missiondangertitle.ttf');
 }
 
 @font-face {
   font-family: 'Arcon';
-  src: url('C:\\Users\\micka\\OneDrive\\Bureau\\L1\\ARE\\Site web\\polices d\'écriture\\Arcon-Rounded-Regular.otf')format('otf');
+  src: url('https://raw.githubusercontent.com/are-dynamic-2023-g8/Kessler-Syndrome/main/Arcon-Rounded-Regular.otf')format('otf');
 }
 html {
   scroll-behavior: smooth;
@@ -242,19 +242,19 @@ code {
 }
 
 .bibliography li {
-  margin-bottom: 10px; /* espace entre chaque entrée */
-  padding-left: 20px; /* indentation du tiret */
-  text-indent: -20px; /* décalage négatif pour le tiret */
+  margin-bottom: 10px; 
+  padding-left: 20px; 
+  text-indent: -20px; 
 }
 
 .bibliography a {
-  color: #006699; /* couleur du lien */
-  text-decoration: none; /* pas de soulignement */
-  font-style: italic; /* style d'écriture italique */
+  color: #006699; 
+  text-decoration: none;
+  font-style: italic; 
 }
 
 .bibliography a:hover {
-  text-decoration: underline; /* soulignement au survol */
+  text-decoration: underline; 
 }
 
 
@@ -290,15 +290,10 @@ code {
 
 .slideshow {
   position: relative;
-  /* Set position to relative to position the arrows correctly */
   width: 100%;
-  /* Set width to 100% so it takes up the full width of its container */
   max-width: 800px;
-  /* Set max-width to 800px to limit the width of the slideshow */
   margin: 0 auto;
-  /* Center the slideshow horizontally using margin: 0 auto */
   overflow: hidden;
-  /* Hide any overflow outside of the container */
   margin-top:50px;
   margin-bottom: 150px;
 }
@@ -306,76 +301,50 @@ code {
 
 .slideshow-inner {
   display: flex;
-  /* Use Flexbox to arrange child elements horizontally */
   transition: transform 0.3s ease-out;
-  /* Apply a smooth transition effect to the transform property */
   align-items: center;
-  /* Vertically align child elements to the center */
 }
 
 
-/* Set the style for each individual slide */
 .slide {
   flex: 0 0 auto;
-  /* Set the flex property to allow for responsive sizing of each slide */
   width: 100%;
-  /* Set the width to 100% to take up the full width of the inner container */
   height: 400px;
-  /* Set a fixed height for all slides */
   text-align: center;
-  /* Center the slide content */
 }
 
 
-/* Set the style for each image within a slide */
 .slide img {
   max-width: 100%;
-  /* Set the maximum width of the image to 100% to prevent stretching */
   max-height: 100%;
-  /* Set the maximum height of the image to 100% to prevent stretching */
 }
 
-/* Set the style for the previous and next slide buttons */
+
 .prev-slide,
 .next-slide {
   position: absolute;
-  /* Set the position to absolute to position the buttons correctly */
   top: 50%;
-  /* Set the top position to 50% to vertically center the buttons */
   transform: translateY(-50%);
-  /* Adjust the position of the buttons so they are centered correctly */
   font-size: 1.5em;
-  /* Set the font size of the buttons */
   color: black;
-  /* Set the text color to white */
   background-color: rgba(255, 255, 255, 0.5);
-  /* Set the background color of the buttons to a semi-transparent black */
   border: 3px solid black;
   border-radius: 20px;
-  /* Remove the border from the buttons */
   padding: 1em;
-  /* Add padding to the buttons for a better look */
   cursor: pointer;
-  /* Change the cursor to a pointer when hovering over the buttons */
   z-index: 2;
-  /* Set the z-index of the buttons so they appear above the slides */
 }
 
-/* Set the style for the hover effect on the previous and next slide buttons */
+
 .prev-slide:hover,
 .next-slide:hover {
   background-color: rgba(255, 255, 255, 0.8);
-  /* Darken the background color of the buttons when hovering over them */
 }
 
-/* Set the position of the previous slide button */
 .prev-slide {
   left: 0;
-  /* Set the left position to 0 to position the button on the left side of the slideshow */
 }
 
-/* Set the position of the next slide button */
 .next-slide {
   right: 0;
-  /* Set the right position to 0 to position the button on the right side of the slideshow */
 }
