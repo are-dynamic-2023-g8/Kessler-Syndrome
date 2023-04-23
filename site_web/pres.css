@@ -356,8 +356,9 @@ code {
 
 
 ::-webkit-scrollbar-thumb {
-  background-color: #fff;
-  border-radius: 5px; 
+  background: linear-gradient(rgba(255, 179, 0, 0.5), rgba(255,0,0,0.5));
+  border-radius: 8px; 
+  height: 35px;
 }
 
 
