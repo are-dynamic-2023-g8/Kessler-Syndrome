@@ -1,0 +1,381 @@
+@font-face {
+  font-family: 'Space-Quest';
+  src: url('C:\\Users\\micka\\OneDrive\\Bureau\\L1\\ARE\\Site web\\polices d\'écriture\\missiondangerspaced.ttf');
+}
+
+@font-face {
+  font-family: 'Space-Quest-Title';
+  src: url('C:\\Users\\micka\\OneDrive\\Bureau\\L1\\ARE\\Site web\\polices d\'écriture\\missiondangertitle.ttf');
+}
+
+@font-face {
+  font-family: 'Arcon';
+  src: url('C:\\Users\\micka\\OneDrive\\Bureau\\L1\\ARE\\Site web\\polices d\'écriture\\Arcon-Rounded-Regular.otf')format('otf');
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Arcon', sans-serif;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  padding-top: 120px;
+  padding-bottom:500px;
+  font-family: 'Space-Quest-Title';
+  font-size: 50px;
+  margin:0;
+}
+
+h2 {
+  color:red;
+  margin-right:5px;
+  margin-left: 5px;
+  margin-bottom: 70px;
+  margin-top: 120px;
+  text-align: center;
+  font-family: 'Space-Quest';
+  font-size: 40px;
+}
+
+h2 {
+  text-decoration: none;
+  margin-left: 30px;
+  margin-right: 30px;
+  height: 45px;
+  background: linear-gradient(to top, rgba(255, 0, 0, 0.8) 0%, rgba(255, 0, 0, 0.8) 5%, transparent 5%) no-repeat left bottom / 0 100%;
+  transition: background-size .5s ease-in-out;
+}
+
+
+h2:hover {
+  background-size: 100% 100%;
+}
+
+h3 {
+  color:red;
+  margin-right:5px;
+  margin-left: 5px;
+  margin-bottom: 70px;
+  margin-top: 100px;
+  text-align: center;
+  font-size: 25px;
+  background: linear-gradient(to right, rgba(139, 146, 103, 0.5), rgba(52, 43, 43, 0.5)) no-repeat left bottom / 0 100%;
+  transition: background-size .8s;
+}
+h3:hover {
+  background-size: 100% 100%;
+}
+
+h4 {
+  color:rgb(255, 81, 81);
+  margin-right:5px;
+  margin-left: 5px;
+  margin-bottom: -150px;
+  margin-top: 100px;
+  text-align: center;
+  font-size: 25px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+  background-image: url('https://wallpapercave.com/wp/wp3493594.png');
+  background-attachment: fixed;
+  width: 100%;
+  margin:0;
+}
+
+
+header {
+  background-image: linear-gradient(rgba(255,255,255,0.15),rgba(0,0,0,0.9)),url("https://i.ytimg.com/vi/wAU1UGsojIE/maxresdefault.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+  
+nav {
+  margin-top:70px;
+  margin-bottom:100px;
+  background: linear-gradient(rgba(17, 27, 77, 0.674),rgba(0,0,0,0.8)),url('https://pbs.twimg.com/profile_banners/3192975297/1532037565/1500x500') no-repeat center center fixed;
+  opacity: 1;
+  background-size: cover;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 200px;
+}
+
+.menu-list {
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+}
+
+
+ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+li.ancres {
+  list-style: none;
+  margin: 0 10px;
+  padding: 0 20px;
+  padding: 25px;
+  padding-right: 30px;
+  border-right: 2px solid #fff;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+li.ancres>a{
+  color:#fff;
+  text-decoration: none;
+}
+
+li.ancres:last-child {
+  border-right: none;
+}
+
+
+
+p.special {
+  font-weight: bold;
+  font-size: 16px;
+  background-color: rgb(177, 155, 183);
+}
+p.special:hover {
+  font-size: 18px;;
+}
+
+p {
+  line-height: 1.6;
+  color: black;
+  margin-bottom: 3px;
+  margin-right: 100px;
+  margin-left: 100px;
+  margin-top: 3px;
+  padding: 12px;
+  text-align: center;
+  font-size: 13px;
+  background-color: beige;
+  opacity: 0.5;
+}
+p:hover {
+  font-weight:550;
+  font-size: 14.5px;
+  border-radius: 15px;
+}
+
+.entre-text {
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+
+#avant_img {
+  margin-top: 100px;
+}
+
+#img_metrique{
+  height:150px;
+  width:default;
+  opacity:0.7;
+  margin-bottom: 80px;
+}
+
+code {
+  color:white;
+  display: flex;
+  justify-content: center;
+  text-indent:0;
+  margin-bottom: 100px;
+}
+
+#tit_graph {
+  margin-top: 200px;
+}
+
+.t_mod {
+  margin-top: 200px;
+  background-color: yellow;
+}
+
+.graphs {
+  margin-top:50px;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-bottom: 20px;
+  max-width: 700px;
+}
+
+.analyse {
+ font-style: italic;
+ margin-top: 30px;
+ background-color: rgb(200, 192, 241);
+}
+
+.soluces {
+  margin-top: 70px;
+  background-color: greenyellow;
+  margin-bottom: 200px;
+}
+
+#sol_conclu1 {
+  margin-top: 100px;
+  margin-bottom: -40px;
+}
+#sol_conclu2 {
+  text-align: start;
+  margin-bottom: 0;
+}
+
+.bibliography {
+  flex-direction: column;
+  font-size: 14px;
+  text-align: center;
+  color:white;
+}
+
+.bibliography li {
+  margin-bottom: 10px; /* espace entre chaque entrée */
+  padding-left: 20px; /* indentation du tiret */
+  text-indent: -20px; /* décalage négatif pour le tiret */
+}
+
+.bibliography a {
+  color: #006699; /* couleur du lien */
+  text-decoration: none; /* pas de soulignement */
+  font-style: italic; /* style d'écriture italique */
+}
+
+.bibliography a:hover {
+  text-decoration: underline; /* soulignement au survol */
+}
+
+
+#banner1 {
+      background: linear-gradient(rgba(68, 70, 79, 0.5),rgba(45, 38, 38, 0.8)),url('https://pbs.twimg.com/profile_banners/3192975297/1532037565/1500x500') no-repeat center center fixed;
+      background-size: cover;
+      margin-top: 70px;
+      height: 50px;
+      width: 100%;
+      padding-top: 20px;
+      display: flex;
+      font-size: 20px;
+      justify-content: center;
+}
+
+.cop {
+  font-weight: 800;
+}
+
+#scroll_haut {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+  cursor: pointer;
+  background-color: black;
+  height: 40px;
+  width:40px;
+}
+
+
+
+
+.slideshow {
+  position: relative;
+  /* Set position to relative to position the arrows correctly */
+  width: 100%;
+  /* Set width to 100% so it takes up the full width of its container */
+  max-width: 800px;
+  /* Set max-width to 800px to limit the width of the slideshow */
+  margin: 0 auto;
+  /* Center the slideshow horizontally using margin: 0 auto */
+  overflow: hidden;
+  /* Hide any overflow outside of the container */
+  margin-top:50px;
+  margin-bottom: 150px;
+}
+
+
+.slideshow-inner {
+  display: flex;
+  /* Use Flexbox to arrange child elements horizontally */
+  transition: transform 0.3s ease-out;
+  /* Apply a smooth transition effect to the transform property */
+  align-items: center;
+  /* Vertically align child elements to the center */
+}
+
+
+/* Set the style for each individual slide */
+.slide {
+  flex: 0 0 auto;
+  /* Set the flex property to allow for responsive sizing of each slide */
+  width: 100%;
+  /* Set the width to 100% to take up the full width of the inner container */
+  height: 400px;
+  /* Set a fixed height for all slides */
+  text-align: center;
+  /* Center the slide content */
+}
+
+
+/* Set the style for each image within a slide */
+.slide img {
+  max-width: 100%;
+  /* Set the maximum width of the image to 100% to prevent stretching */
+  max-height: 100%;
+  /* Set the maximum height of the image to 100% to prevent stretching */
+}
+
+/* Set the style for the previous and next slide buttons */
+.prev-slide,
+.next-slide {
+  position: absolute;
+  /* Set the position to absolute to position the buttons correctly */
+  top: 50%;
+  /* Set the top position to 50% to vertically center the buttons */
+  transform: translateY(-50%);
+  /* Adjust the position of the buttons so they are centered correctly */
+  font-size: 1.5em;
+  /* Set the font size of the buttons */
+  color: black;
+  /* Set the text color to white */
+  background-color: rgba(255, 255, 255, 0.5);
+  /* Set the background color of the buttons to a semi-transparent black */
+  border: 3px solid black;
+  border-radius: 20px;
+  /* Remove the border from the buttons */
+  padding: 1em;
+  /* Add padding to the buttons for a better look */
+  cursor: pointer;
+  /* Change the cursor to a pointer when hovering over the buttons */
+  z-index: 2;
+  /* Set the z-index of the buttons so they appear above the slides */
+}
+
+/* Set the style for the hover effect on the previous and next slide buttons */
+.prev-slide:hover,
+.next-slide:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+  /* Darken the background color of the buttons when hovering over them */
+}
+
+/* Set the position of the previous slide button */
+.prev-slide {
+  left: 0;
+  /* Set the left position to 0 to position the button on the left side of the slideshow */
+}
+
+/* Set the position of the next slide button */
+.next-slide {
+  right: 0;
+  /* Set the right position to 0 to position the button on the right side of the slideshow */
+}

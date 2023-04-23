@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Syndrome de Kessler</title>
+    <link rel="stylesheet" href="pres.css">
+    <link rel="stylesheet" href="https://pygments.org/css/lovelace.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Le Syndrome de Kessler</h1>
+    </header>
+      <nav>
+        <div class="menu-list" id="menu">
+          <ul>
+            <li class="ancres"><a href="#wintro">Introduction</a></li>
+            <li class="ancres"><a href="#wprob">Problématique</a></li>
+            <li class="ancres"><a href="#wmod">Modélisation</a></li>
+            <li class="ancres"><a href="#wconclu">Conclusion</a></li>
+            <li class="ancres"><a href="#wbiblio">Bibliographie</a></li>
+          </ul>
+      </nav>
+    <main>
+      <center>
+      <h2 id="wintro">INTRODUCTION</h2>
+      <p>Le nombre de satellites lancés chaque année est en constante augmentation 
+        depuis les dernières années en raison de la demande croissante pour les services de communication, 
+        l'observation de la Terre, la navigation et d'autres applications spatiales.
+      </p>
+      <p class="entre-text">
+        L'augmentation du nombre de satellites en orbite terrestre présente un défi croissant pour les agences spatiales et les scientifiques du monde entier. 
+        En effet, le risque de collisions entre ces satellites et les débris spatiaux déjà présents est plus élevé que jamais. 
+        De plus, l'ajout de nouveaux satellites sur une base régulière rend la gestion de ces risques encore plus complexe.
+      </p>
+      <p><span style=" color: black;">Le syndrome de Kessler, proposé par l'astrophysicien américain
+          Donald J. Kessler en 1978, est un scénario de plus en plus préoccupant pour les experts de la NASA et les
+          scientifiques.
+          Ce scénario décrit un potentiel « effet domino » qui pourrait se produire si une collision entre deux objets en
+          orbite terrestre se produisait.
+          Cette collision créerait alors un grand nombre de débris spatiaux en orbite, qui à leur tour pourraient entraîner
+          de nouvelles collisions et créer encore plus de débris, ce qui rendrait l'espace autour de la Terre dangereux,
+          voire impossible à utiliser pour les missions spatiales.</span>
+      </p>
+      <p class="entre-text" id="avant_img">
+        Voici quelques images permettant de schématiser la situation dans l'espace:
+      </p>
+      <div class="slideshow">
+        <div class="slideshow-inner">
+          <div class="slide">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a1/Debris-GEO1280.jpg" alt="Image 1">
+          </div>
+          <div class="slide">
+            <img src="https://miro.medium.com/v2/resize:fit:786/format:webp/1*r-BuRhIgb2y3mYr0xhXuTg.jpeg" alt="Image 2">
+          </div>
+          <div class="slide">
+            <img src="https://i0.wp.com/spacenews.com/wp-content/uploads/2022/03/wayfinder.jpg" alt="Image 3">
+          </div>
+          <div class="slide">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a1/Debris-GEO1280.jpg" alt="Image 1">
+          </div>
+          <div class="slide">
+            <img src="https://miro.medium.com/v2/resize:fit:786/format:webp/1*r-BuRhIgb2y3mYr0xhXuTg.jpeg" alt="Image 2">
+          </div>
+          <div class="slide">
+            <img src="https://i0.wp.com/spacenews.com/wp-content/uploads/2022/03/wayfinder.jpg" alt="Image 3">
+          </div>
+          <!-- Add more slides as needed -->
+        </div>
+        <button class="prev-slide">&#8249;</button>
+        <button class="next-slide">&#8250;</button>
+      </div>
+
+      <h2 id="wprob">PROBLEMATIQUE</h2>
+      <p class="special"><span style="color: black;">Quelles mesures peuvent être prises pour minimiser les risques de collisions en orbite et éviter la propagation du syndrome de Kessler ?</span>
+      </p>
+
+      <h2 id="wmod" class="avantgraph">MODELISATION</h2>
+      <h3>OUTILS NECESSAIRES A LA MODELISATION</h3>
+      <p>Pour modéliser notre réponse à la problématique de Kessler, 
+        on utilisera 2 équations mathématique assez complexe décrivant un modèle de rétroaction, 
+        très utilisé dans les domaines de l'ingénierie et de l'économie:
+      </p>
+      <p>d = (<mrow><mo>1</mo><mo>-</mo><mi>&phi;</mi></mrow>)*d + (<mi>&gamma;</mi>*l) + (<mi>w</mi>*<mi>n</mi>*d)*((<mrow><mo>1</mo><mo>-</mo><mi>&delta;</mi></mrow>)*s+l)<br>
+      s = (<mrow><mo>1</mo><mo>-</mo><mi>w</mi>*d</mrow>)*((<mrow><mo>1</mo><mo>-</mo><mi>&delta;</mi></mrow>)*s+l)</p>
+      <br><br>
+      <img id="img_metrique" src="C:\Users\micka\OneDrive\Bureau\L1\ARE\Site web\métrique_site.png">
+      </center>
+
+      <p>On initialisera ces métriques avec les valeurs suivantes:</p>
+        <pre>
+        <code>
+        s0 = 4550.0,  # nombre de satellite en fonctionnement au debut
+        d0 = 30521.0,  # nombre de débris au début
+        l = 3,  # taux de lancement par jour
+        phi = 0.0400 / 365.0,  # taux de réentrées
+        gamma = 25,  # les debris generee par le deuxieme etage
+        delta = 0.05 / 365.0,  # taux de sattelite qui deviennent des débris.
+        w = 1 * 10**(-8) / 365.0,  # taux de debris qui cause des colision.
+        n = 300,  # le nombre de débris causer par chaque colision.
+        dt = 1,  #l'ecart de temps 1=1 jour 
+        tmax = 36500 * 3  # nombre de jour observé
+      </code>
+      </pre>
+      <p> Dans nos différentes modélisations, nous ferons varier dans l'ordre l, gamma et w 
+        puis nous concluerons sur les solutions permettant de répondre à la problématique.
+      </p>
+      <p class="entre-text">
+        Chaque modélisation représentera pour la variation des 3 différents paramètres le nombre de satellites puis le nombre de débris dans l'espace en fonction du temps.
+        Ceux-ci étant intimement liés puisque le nombre de satellites lancés et présents dans l'espace influence sur la création de débris (débris générés à chaque lancement, satellites en fin de vie, collisions de débris avec des satellites créant encore plus de débris pouvant entrainer un effet "domino"...)
+        et donc sur l'arrivée plus ou moins rapide du syndrome de Kessler représentée par une montée exponentielle du nombre de débris et une descente parfois drastique du nombre de satellites dans l'espace.
+      </p>
+      <h3 id="tit_graph">GRAPHIQUES</h3>
+      <h4>Variation de l</h4>
+      <p class="t_mod">
+        <span>Tout d'abord, le nombre croissant de satellites lancés chaque
+          jour, combiné à l'absence de réglementation et de coordination internationales, aggrave la situation en augmentant la probabilité
+          de collisions et de création de satellites et de débris supplémentaires comme le montre le graphique ci-dessous:
+        </span>
+      </p>
+    <center>
+      <div id="plot11" class="graphs"></div>
+      <div id="plot12" class="graphs"></div>
+      <span class="hov" style="background-color: black; color: white; opacity:0.7">
+        Par comparaison, le nombre moyen de lancement quotidien se situait
+        autour de 3-4 durant ces dernières années.</span>
+      <p class="analyse">
+        On peut voir que le nombre de lancements influe directement sur l'apparition du Syndrome de Kessler qui apparait au bout d'une trentaine d'année
+        et avec un nombre de débris et de satellites qui se stabilisent au bout d'une centaine d'année.<br><br>
+        Pour l = 1, la courbe se stabilise rapidement puisque le taux de lancement quotidien est compensé rapidement par phi et w.
+      </p>
+      <p class="soluces">
+        Il est donc crucial que les acteurs spatiaux internationaux
+        travaillent ensemble pour mettre en place des mesures de réglementation efficaces pour limiter le nombre de
+        lancements de satellites et garantir que ceux-ci soient effectués de manière responsable et durable.
+      </p>
+      <h4>Variation de gamma</h4>
+      <p class="t_mod">
+        Le nombre de débris générés par chaque lancement de
+        satellite est directement lié à la quantité de déchets qui se retrouvent dans l'espace. Plus il y a de débris, plus les
+        risques de collision augmentent, ce qui peut entraîner la création de nouveaux débris et ainsi de suite, créant
+        ainsi un cercle vicieux qui aggrave le syndrome de Kessler.
+      </p>
+      <div id="plot21" class="graphs"></div>
+      <div id="plot22" class="graphs"></div>
+      <span class="hov" style="background-color: black; color: white; opacity:0.7">
+        Par comparaison, on estime le nombre moyen de débris générés autour de 25.</span>
+      <p class="analyse">
+        Par lecture graphique, on peut remarquer que nombre de débris générés à chaque lancement de satellites
+        influe sur la vitesse d'apparition du syndrome de Kessler(doublée entre gamma = 100 et gamma = 10). <br> <br>
+        A court terme, un gamma moins élevé permet de lancer plus de satellites comme le montre le graphique 2.1.
+      </p>
+      <p class="soluces">
+        Ainsi, diminuer le nombre de débris généré par
+        lancement serait une solution intéressante. <br>
+        Pour réduire ce risque, les entreprises spatiales
+        peuvent mettre en œuvre des pratiques de lancement plus sûres, 
+         telles que l'utilisation de systèmes de récupération pour
+        réduire les débris lors du lancement.
+      </p>
+      <h4>Variation de w</h4>
+      <p class="t_mod">
+      Le taux de débris causant des collisions influence également
+      sur le nombre de collisions entre les débris et les satellites.
+      Plus la résistance des satellites est faible, 
+      plus ils sont susceptibles d'être endommagés en cas de collision avec un débris
+      </p>
+      <div id="plot31" class="graphs"></div>
+      <div id="plot32" class="graphs"></div>
+      <span class="hov" style="background-color: black; color: white; opacity:0.7">
+       On prendra en compte que le taux de collision w reste une estimation
+      et qu'il est d'ailleurs susceptible de varier avec l'augmentation du nombre de débris et de satellites dans l'espace.</span>
+      <p class="analyse">
+        On remarque que w influe sur notre capacité à envoyer plus de satellites plus longtemps sans q'ils se fassent rapidement transformer en débris
+      </p>
+      <p class="soluces">
+      Les satellites peuvent être renforcés pour résister à de tels
+      impacts, mais cela entraîne un coût supplémentaire pour la mission.
+      Avec une meilleure surveillance des orbites des satellites et des débris 
+      pour prévenir les collisions, il est possible de réduire drastiquement le syndrome de Kessler.
+      </p>
+    </center>
+      <h2 id="wconclu">CONCLUSION</h2>
+      <p>
+        Le syndrome de Kessler est une menace grandissante pour l'utilisation de l'espace et le maintien des missions spatiales.
+        L'augmentation constante du nombre de satellites en orbite terrestre, combinée à la présence de débris spatiaux, 
+        crée un risque accru de collisions qui pourraient déclencher un effet domino conduisant à une quantité incontrôlable de débris en orbite. 
+      </p>
+      <p>
+        Les débris dans l'espace sont un problème croissant pour
+        l'exploration spatiale et la sécurité de nos satellites et autres équipements en orbite. Ces débris, tels que les
+        fragments de satellites ou de fusées, peuvent se déplacer à des vitesses très élevées et causer des dommages
+        importants lorsqu'ils entrent en collision avec d'autres objets en orbite. Pour cette raison, il est important de
+        prendre des mesures pour limiter la quantité de débris dans l'espace et assurer la sécurité de nos activités
+        spatiales.
+        </p>
+      <p class="soluces" id="sol_conclu1">
+        Il existe plusieurs mesures à prendre pour éviter le syndrome de Kessler dont:</p>
+        <p class="soluces" id="sol_conclu2">
+        - réduire le nombre de satellites mis en orbite grâce à une meilleure utilisation et à une coopération internationale accrue.<br>
+        - mise en place d'un système de surveillance et de suivi des débris spatiaux (possibilité de les faire retourner sur Terre avec filets, harpons, lasers, électro-aimants géants...).<br>
+        - respecter des normes strictes de conception et de lancement de satellites pour minimiser la création de nouveaux débris spatiaux.<br>
+        - conception de satellites pour qu'ils soient équipés de systèmes d'évitement de collision.<br>
+        - retrait des satellites qui ont atteint la fin de leur durée de vie utile.<br>
+        </p>
+      <h2 id="wbiblio">BIBLIOGRAPHIE</h2>
+      <ul class="bibliography">
+        <li>Nodir Adilov, Peter J. Alexander, Brendan M. Cunningham, « An economic “Kessler Syndrome”: A dynamic model of earth orbit debris », Department of Economics, Indiana University-Purdue University Fort Wayne, March 2018. <br><a href="https://doi.org/10.1016/j.econlet.2018.02.025">https://doi.org/10.1016/j.econlet.2018.02.025</a></li><br>
+        <li>Donald J. Kessler , Nicholas L. Johnson , J.-C. Liou , et Mark Matney, « The Kessler Syndrome : Implications to Future Space Operations » AAS Publications Office, February 2010. <br><a href="https://citeseerx.ist.psu.edu/document?repid=rep1&type=pdf&doi=227655e022441d1379dfdc395173ed2e776d54ee">https://citeseerx.ist.psu.edu/document?<br>
+          repid=rep1&type=pdf&doi=<br>227655e022441d1379dfdc395173ed2e776d54ee</a></li><br>
+        <li>Jakub Drmola, Tomas Hubik, « Kessler Syndrome: System Dynamics Model », Division of Security and Strategic Studies, Department of Political Science at the Faculty of Social Sciences of Masaryk University, March 2018. <br><a href="https://doi.org/10.1016/j.spacepol.2018.03.003">https://doi.org/10.1016/j.spacepol.2018.03.003</a></li><br>
+        <li>Sergei Nikolaev, « Modeling Kessler syndrome using brute force approach», Lawrence Livermore National Laboratory, July 2012. <br><a href="https://doi.org/10.1063/1.4739900">https://doi.org/10.1063/1.4739900</a></li><br>
+        <li>Kurzgesagt, « La fin de l'espace - Créer une prison pour l'humanité », Kurzgesagt Youtube, Novembre 2018. <br><a href="https://www.youtube.com/watch?v=yS1ibDImAYU&ab_channel=Kurzgesagt%E2%80%93InaNutshell">https://www.youtube.com/watch?v=yS1ibDImAYU&ab_<br>channel=Kurzgesagt%E2%80%93InaNutshell</a></li><br>
+        <li>Julia Hudson, « KESSYM: A stochastic orbital debris model for evaluation of Kessler Syndrome risks and mitigations », Authorea, December 2022. <br><a href="https://doi.org/10.22541/au.166990186.63397226/v1">https://doi.org/10.22541/au.166990186.63397226/v1</a></li><br>
+        <li>«Space Debris and Human Spacecraft» écrit par Mark Garcia et publié par le NASA <br><a href="https://www.nasa.gov/mission_pages/station/news/orbital_debris.html">https://www.nasa.gov/mission_pages/station/news/orbital_debris.html</a></li><br>
+        <li>(Credits: Canadian Space Agency, NASA) <br><a href="https://www.asc-csa.gc.ca/eng/search/video/watch.asp?v=1_qlq8ze7p">https://www.asc-csa.gc.ca/eng/search/video/watch.asp?v=1_qlq8ze7p</a></li><br>
+    </main>
+  </body>
+  <footer>
+    <div id="banner1"> 
+      <div class="cop">© Copyright 2023 - Tous droits réservés </div>
+    </div>
+    <img id="scroll_haut" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIIAAACCCAMAAAC93eDPAAAAYFBMVEX///8AAAD7+/tsbGzr6+vn5+eioqJvb28zMzM2NjZ0dHTJyckPDw+ampqvr68mJibBwcF6enqIiIj19fVkZGQgICBWVlZERERKSkpbW1tQUFCBgYE/Pz+QkJAtLS3f398i/CPcAAADG0lEQVR4nO2c63aqMBCFA4KAd6T1Vnv6/m9ZUBK2oGQSJGT1zPyqq5J8K3tnCCGjEE0s50m6CkaPVZrMl+JJROt0/N6bSNdRm2CzdQlQxXbzABDOXANUMQtBhGwKgiDIlBjhRAQlgxyHSVS4x6x24nQEQXDzZNTMhc98F4ejR7zLP1WX28oOa/VxET9LGGNEvFCdrsuPKiPtXQFUsZe9pmVWVmPgkkAINQ5LMZc+cKbCPWLph7lI6r9ytwRC5HXHibLCzjXCTplB3p0d61AqUXe8EtIVof6i90Yoe2YERmAERmAERmAERmAERmAERmCE/xQhWi4tH4jfhfBdXbooJkSotyk+bBjegyA3SoLzVAiwa3uaBiEPIM7GWrwB4YGg9INpA8MRFkErDq4RkjZBEFzMmhiKkHcJTOfmQIQvGP8PSz8MQwAVroU4gBauEECFY3UZMJzpzQxBABUuN/VDKy0GIADBsX7DFp6BYXwEyAdZMwNAC2p+sEbAMcA5CAxELWwRgOD08NK5AD/MSG1ZIgDBtfXaO7wY+sEOAWZj1v2+oR+sEPZNH6cnuRjnBUELGwQk6Bw+qKJAhjEQwAfZU4Ky1ZOBH8wRkOD1d4FBt540RtCqULcLWiz6mzRFAIJjD0HpB5gX/X4wRAAV0l4CAz+YIcAYZPqVEeSovnEwQvgGFQgPkKhFz7t4EwQcA9IjbAFavB4HAwT0AXV9SvEDHQFUaN+ZXgfes15pQUYw9IEMgh+oCOAD3WxsMRx1fiAiAME/0+dWHQMNwcoHMlCLZ0dESAhIYLGhVPR7koKAKhiPwY0BtEhsEJojV/R80A5g6GihR4ibq01m42OgFu2zpnqEubqWlpVfMDR58ssYQXnRzgeqI6VF25F6BHnwzCwj9TBs2v/QItRLsOvPMAIhorsfOgsNwoy4pZbDG05cFdX+ZHfRTUpNke0ON6mhv/QygBEYgREYgREYgREYgREYgRFcI3hQqOJBuY4HRUselG55UMDmQRmfD8WMHpR0elDY6kN5rw9Fzh6UevtQ8C48KPsXPvz4QRUT/QTEL0yIKV+HAc7SAAAAAElFTkSuQmCC" alt="Bouton de défilement vers le haut">
+  </footer>
+  <script src="pres.js"></script>
+</html>
+
